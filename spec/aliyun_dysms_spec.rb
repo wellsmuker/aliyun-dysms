@@ -1,5 +1,6 @@
-RSpec.describe Aliyun::Dysms do
+# frozen_string_literal: true
 
+RSpec.describe Aliyun::Dysms do
   describe "#Aliyun::Sms" do
     before do
       Aliyun::Dysms.configure do |config|

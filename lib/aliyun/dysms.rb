@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 require "aliyun/dysms/version"
 require "aliyunsdkcore"
 
 module Aliyun
   module Dysms
     class Configuration
-      attr_accessor :access_key_id, :access_key_secret, :action, 
+      attr_accessor :access_key_id, :access_key_secret, :action,
                     :region_id, :sign_name, :api_version
 
       def initialize
@@ -43,6 +45,8 @@ module Aliyun
             method: "POST"
           }
         )
+      rescue StandardError => e
+        { Code: "BadRequest", Message: "Request failed: #<#{e.class}: #{e.message}>" }
       end
 
       def client
@@ -54,9 +58,7 @@ module Aliyun
         )
       end
 
-      def response
-        @response
-      end
+      attr_reader :response
     end # class << self
   end # module Dysms
 end # module Aliyun

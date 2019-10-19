@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
@@ -9,8 +10,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Wells Muker"]
   spec.email         = ["wellsmuker@gmail.com"]
 
-  spec.summary       = %q{A Ruby Gem for using aliyun dysms service.}
-  spec.description   = %q{适用于阿里云官方提供的短信服务。}
+  spec.summary       = "A Ruby Gem for using aliyun dysms service."
+  spec.description   = "适用于阿里云官方提供的短信服务。"
   spec.homepage      = "https://github.com/kejincan0527/aliyun-dysms"
   spec.license       = "MIT"
 
